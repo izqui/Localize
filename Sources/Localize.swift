@@ -2,10 +2,9 @@ import Foundation
 
 private extension String {
     var snakeCaseString: String {
-        var string = self
-        string = string.stringByReplacingOccurrencesOfString("([a-z])([A-Z])", withString: "$1-$2", options: NSStringCompareOptions.RegularExpressionSearch, range: string.startIndex..<string.endIndex)
-        string.replaceRange(startIndex...startIndex, with: String(self[startIndex]))
-        return string.lowercaseString
+        return stringByReplacingOccurrencesOfString("([a-z])([A-Z])", withString: "$1-$2", options: NSStringCompareOptions.RegularExpressionSearch, range: startIndex..<endIndex)
+            .stringByReplacingCharactersInRange(startIndex...startIndex, withString: String(self[startIndex]))
+            .lowercaseString
     }
 }
 
