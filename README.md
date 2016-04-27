@@ -1,6 +1,6 @@
 # Localize
 
-Example: 
+### Example: 
 
 Your swift strings file:
 
