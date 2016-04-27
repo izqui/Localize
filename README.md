@@ -34,4 +34,4 @@ So in your app you can call:
 let about = AppStrings.Menu.Settings.About.localized 
 ```
 
-which will look in you `Localizable.strings` for the key `"app-strings.menu.settings.about"`.
+which will look in you `Localizable.strings` file for the key `"app-strings.menu.settings.about"`.
