@@ -19,16 +19,25 @@ public typealias LocalizeParent = Localizable.Type?
 
 public extension Localizable {
     var localized: String {
-        return NSBundle.mainBundle().localizedStringForKey(self.dynamicType.entityName + stringSeparator + rawValue.snakeCaseString, value: nil, table: nil)
+        return NSBundle.mainBundle().localizedStringForKey(localizableKey, value: nil, table: nil)
+    }
+    
+    var description: String {
+        return localizableKey
     }
 }
 
 private extension Localizable {
+    static func concatComponent(parent parent: String?, child: String) -> String {
+        guard let p = parent else { return child.snakeCaseString }
+        return p + stringSeparator + child.snakeCaseString
+    }
+    
     static var entityName: String {
-        let name = String(self).snakeCaseString
-        
-        guard let parentName = parent?.entityName else { return name }
-        
-        return parentName + stringSeparator + name
+        return concatComponent(parent: parent?.entityName, child: String(self))
+    }
+    
+    var localizableKey: String {
+        return self.dynamicType.concatComponent(parent: self.dynamicType.entityName, child: rawValue)
     }
 }

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  example
+
+  Created by Jorge Izquierdo on 4/28/16.
+  Copyright © 2016 Jorge Izquierdo. All rights reserved.
+*/
+
+"example.title" = "Example app";
+"example.view.hello" = "Hello world";
