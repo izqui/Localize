@@ -14,8 +14,8 @@ enum Example: String, Localizable {
     enum View: String, Localizable {
         case Hello
         
-        static var parent: LocalizeParent = Example.self
+        static let parent: LocalizeParent = Example.self
     }
     
-    static var parent: LocalizeParent = nil
+    static let parent: LocalizeParent = nil
 }
