@@ -34,10 +34,14 @@ private extension Localizable {
     }
     
     static var entityName: String {
-        return concatComponent(parent: parent?.entityName, child: String(self))
+        return String(self)
+    }
+    
+    static var entityPath: String {
+         return concatComponent(parent: parent?.entityName, child: entityName)
     }
     
     var localizableKey: String {
-        return self.dynamicType.concatComponent(parent: self.dynamicType.entityName, child: rawValue)
+        return self.dynamicType.concatComponent(parent: self.dynamicType.entityPath, child: rawValue)
     }
 }

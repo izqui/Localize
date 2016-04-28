@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = AppStrings.Title.localized
+        title = NSLocalizedString("example.title", comment: "")
         mainLabel.text = AppStrings.View.Hello.localized
     }
 
